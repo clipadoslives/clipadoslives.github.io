@@ -1,14 +1,17 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Clipados Lives</title>
+    <title>Site Responsivo</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 </head>
-<style>
-body {
+<body>
+    <style>
+        body {
     font-family: Arial, sans-serif;
     background-color: white;
     margin: 0;
@@ -34,7 +37,9 @@ body {
     justify-content: center;
     align-items: center;
 }
-
+#inicio1{
+ opacity: 0%;
+}
 .header-content {
     display: flex;
     flex-direction: column;
@@ -42,11 +47,11 @@ body {
 }
 
 .header-logo {
-    max-width: 150px;
+    max-width: 200px;
     height: auto;
     margin-bottom: 20px;
     position: absolute;
-    bottom: -90px;
+    bottom: -130px;
 }
 
 #main {
@@ -67,7 +72,7 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgba(52, 58, 64, 0.9);
+    background-color: rgba(220,220,220,0.3);
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -84,7 +89,7 @@ body {
     padding: 10px 15px;
     text-decoration: none;
     font-size: 15px;
-    color: #adb5bd;
+    color: black;
     display: flex;
     align-items: center;
     transition: color 0.3s, background-color 0.3s, font-weight 0.3s, width 0.5s; /* Transição suave */
@@ -329,76 +334,171 @@ body {
     position: relative;
     z-index: 1;
 }
-
-.social-icons {
+/*redes sociais*/
+/* Estilos específicos para o contêiner dos botões de redes sociais */
+.social-media-section {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    padding: 10px;
-}
-
-.social-icons a {
-    position: relative;
-    margin: 10px;
-    color: #fff;
-    font-size: 30px;
-    text-decoration: none;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    width: 60px;
-    height: 60px;
-    display: flex;
     align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background-color: white;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.social-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+.social-button-group {
+    display: flex;
     justify-content: center;
-    border-radius: 10px;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.social-icons a:before {
-    content: attr(data-title);
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 3px;
-    font-size: 12px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
+.social-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffffff, #e0e0e0);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    width: 150px;
+    height: 150px;
+    text-decoration: none;
+    box-sizing: border-box;
+    word-wrap: break-word;
 }
 
-.social-icons a:hover {
+.social-button:hover {
     transform: translateY(-10px);
+    background: linear-gradient(135deg, #e0e0e0, #ffffff);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.social-icons a:hover:before {
-    opacity: 1;
+.social-button i {
+    font-size: 2em;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.social-icons a.pix {
-    background-color: #4caf50; /* Cor para Pix */
+#discord i {
+    color: #7289DA;
 }
 
-.social-icons a.instagram {
-    background-color: #e4405f; /* Cor para Instagram */
+#instagram i {
+    color: #E4405F;
 }
 
-.social-icons a.tiktok {
-    background-color: #010101; /* Cor para Tiktok */
+#livepix i {
+    color: #DAA520;
 }
 
-.social-icons a.youtube {
-    background-color: #ff0000; /* Cor para YouTube */
+#tiktok i {
+    color: #000000;
 }
 
-.social-icons a.twitch {
-    background-color: #6441a5; /* Cor para Twitch */
+#twitch i {
+    color: #6441A4;
 }
 
-.social-icons a.discord {
-    background-color: #7289da; /* Cor para Discord */
+#youtube i {
+    color: #FF0000;
 }
+
+.social-button:hover i {
+    color: #1E90FF;
+    transform: rotate(360deg);
+}
+
+.social-name {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #333;
+    transition: color 0.3s ease;
+    text-align: center;
+}
+
+/* Animações para os títulos */
+@keyframes wobble {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.effect-wobble:hover .social-name {
+    animation: wobble 0.5s ease infinite;
+}
+
+.effect-bounce:hover .social-name {
+    animation: bounce 0.5s ease infinite;
+}
+
+.effect-shake:hover .social-name {
+    animation: shake 0.5s ease infinite;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .social-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .social-container > a:nth-child(3) { 
+        grid-column: span 2;
+    }
+
+    .social-container > a:nth-child(5) {
+        grid-column: span 2;
+    }
+
+    .social-button {
+        width: 100%;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-button {
+        padding: 15px;
+        max-width: 100%;
+        height: 150px;
+        font-size: 12px;
+    }
+
+    .social-name {
+        font-size: 0.9em;
+    }
+}
+
 
 /* Responsividade para todos os tamanhos de tela */
 @media (max-width: 1024px) {
@@ -1065,9 +1165,118 @@ body {
         width: 10vw; /* Ajuste para telas menores */
     }
 }
+/*enviar mimos*/
+.envio-mimos-container {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #8A2BE2, #1E90FF);
+    background-size: 400% 400%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    animation: envioMimosGradientAnimation 20s ease infinite;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+}
 
-</style>
-<body>
+@keyframes envioMimosGradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.envio-mimos-title {
+    font-family: 'Cinzel Decorative', cursive;
+    color: #DAA520;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.envio-mimos-options {
+    margin-bottom: 20px;
+}
+
+.envio-mimos-button {
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #1E90FF;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.5s ease, transform 0.3s ease;
+}
+
+.envio-mimos-button:hover {
+    background-color: #1E90FF;
+    color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+}
+
+.envio-mimos-content {
+    margin-top: 20px;
+}
+
+#envioMimosQrCodeImg {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.envio-mimos-hidden {
+    display: none;
+}
+
+.envio-mimos-pix-key {
+    font-size: 1.2em;
+    color: #DAA520;
+    font-weight: bold;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .envio-mimos-title {
+        font-size: 1.5em;
+    }
+
+    .envio-mimos-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+/*redes sociais*/
+/* Centraliza os botões em telas menores */
+@media (max-width: 768px) {
+    .social-media-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align: center; /* Garante o alinhamento centralizado do texto */
+    }
+
+    .social-media-buttons button {
+        margin: 10px; /* Ajusta o espaço entre os botões */
+    }
+}
+
+    </style>
     <!-- Header com fundo e logo -->
     <header class="header">
         <div class="header-content">
@@ -1092,7 +1301,7 @@ body {
     <div id="main">
         <!-- Seções de conteúdo -->
       <div id="inicio" class="content" align="center">
-    <h1 id="inicio">Início</h1>
+    <h1 id="inicio1">Início</h1>
     <p>
         <span class="random-fall-text">B</span>
         <span class="random-fall-text">e</span>
@@ -1122,24 +1331,56 @@ body {
         </div>
         <div id="enviar-mimos" class="content" align="center">
             <h1>Enviar Mimos</h1>
-            <p>Conteúdo será disponibilizdo em breve. Arguarde!!!</p>
+    <div class="envio-mimos-container">
+        <h1 class="envio-mimos-title" id="envioMimosMainTitle">Escolha uma Opção</h1>
+        <div class="envio-mimos-options">
+            <button id="envioMimosShowQrCodeBtn" class="envio-mimos-button">Ver QR Code</button>
+            <button id="envioMimosShowPixKeyBtn" class="envio-mimos-button">Mostrar Chave PIX</button>
         </div>
+        <div id="envioMimosContentQrCode" class="envio-mimos-content"></div>
+        <div id="envioMimosContentPix" class="envio-mimos-content"></div>
+        <button id="envioMimosBackBtn" class="envio-mimos-button envio-mimos-hidden">Voltar</button>
+    </div>
         <div id="loadouts-warzone" class="content" align="center">
             <h1>Loadouts Warzone</h1>
             <p>Conteúdo será disponibilizdo em breve. Arguarde!!!</p>
         </div>
-        <div id="redes-sociais" class="content redes-sociais" align="center">
-            <h1>Redes Sociais</h1>
-            <div id="social-icons" class="social-icons" align="center">
-                <a href="https://livepix.gg/clipados" class="pix" data-title="Live Pix Clipados"><i class="fas fa-dollar-sign"></i></a>
-                <a href="https://www.instagram.com/clipados_livesoficial/" target="_blank" class="instagram" data-title="clipados_livesoficial"><i class="fab fa-instagram"></i></a>
-                <a href="https://tiktok.com/@clipados_lives" target="_blank" class="tiktok" data-title="@clipados_lives"><i class="fab fa-tiktok"></i></a>
-                <a href="https://youtube.com/@CLIPADOSLIVES" target="_blank" class="youtube" data-title="@clipadoslives"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.twitch.tv/clipados_lives" target="_blank" class="twitch" data-title="
-clipados_lives"><i class="fab fa-twitch"></i></a>
-                <a href="https://discord.gg/cfYERxdjzC" target="_blank" class="discord" data-title="Discord"><i class="fab fa-discord"></i></a>
+<!--redes sociais-->
+     <div id="redes-sociais" class="content redes-sociais" align="center">
+            <h1>Redes Sociais</h1>          
+    <div class="social-media-section">
+        <div class="social-container">
+            <div class="social-button-group">
+                <a href="https://discord.gg/cfYERxdjzC" target="_blank" class="social-button" id="discord">
+                    <i class="fab fa-discord"></i>
+                    <p class="social-name">Familia Clipados</p>
+                </a>
+                <a href="https://www.instagram.com/clipados_livesoficial/" target="_blank" class="social-button" id="instagram">
+                    <i class="fab fa-instagram"></i>
+                    <p class="social-name">clipados_livesoficial</p>
+                </a>
+                <a href="https://livepix.gg/clipados" target="_blank" class="social-button" id="livepix">
+                    <i class="fas fa-donate"></i>
+                    <p class="social-name">LivePix Clipados</p>
+                </a>
+            </div>
+            <div class="social-button-group">
+                <a href="https://tiktok.com/@clipados_lives" target="_blank" class="social-button" id="tiktok">
+                    <i class="fab fa-tiktok"></i>
+                    <p class="social-name">@clipados_lives</p>
+                </a>
+                <a href="https://www.twitch.tv/clipados_lives" target="_blank" class="social-button" id="twitch">
+                    <i class="fab fa-twitch"></i>
+                    <p class="social-name">clipados_lives</p>
+                </a>
+                <a href="https://youtube.com/@CLIPADOSLIVES" target="_blank" class="social-button" id="youtube">
+                    <i class="fab fa-youtube"></i>
+                    <p class="social-name">@clipadoslives</p>
+                </a>
             </div>
         </div>
+    </div>
+</div>       
       <!--sobre-->  
       <div id="sobre" class="content" align="center">
             <h1>Sobre</h1>
@@ -1154,13 +1395,13 @@ clipados_lives"><i class="fab fa-twitch"></i></a>
             </div>-->
         </div>
         <p id="text">
-            🎮 DE SEGUNDA A SEXTA ⏩ 20:00 H !!
+           DE SEGUNDA A SEXTA A PARTIR DAS  20:00 HORAS!!
         </p>
         <p id="text2" style="display:none;">
-            🎮 DE SEGUNDA A SEXTA ⏩ 20:00 H !!
-            <br> UM CANAL FOCADO EM WARZONE E MUITA RESENHA.
-            <br> AQUI TEM CURA DA ANSIEDADE.
-            <br> DEPRESSÃO E TODO SENTIMENTO RUIM VÃO EMBORA 😎
+           DE SEGUNDA A SEXTA A PARTIR DAS  20:00 HORAS!!
+            <br>UM CANAL FOCADO EM WARZONE E MUITA RESENHA.
+            <br> AQUI TEM CURA DA ANSIEDADE,
+            <br> DEPRESSÃO E TODO SENTIMENTO RUIM VAI EMBORA!!! 
             <br><br> <!-- Adiciona duas linhas abaixo do texto -->
         </p>
         <div class="image-container">
@@ -1171,7 +1412,7 @@ clipados_lives"><i class="fab fa-twitch"></i></a>
       <!--quem é o clipados?-->
         <div id="quem-e-o-clipados" class="content">
             <h1>Quem é o Clipados?</h1>
-            <p>Conheça o Clipados.</p>
+            <p>Conteúdo será disponibilizdo em breve. Arguarde!!!</p>
         </div>
         <div id="parcerias" class="content">
             <h1>Parcerias</h1>
@@ -1244,11 +1485,11 @@ clipados_lives"><i class="fab fa-twitch"></i></a>
   </div>  
 <!-- Rodapé fixo --> 
   <footer class="footer"> <p>Clipados Lives © Todos os Direitos Reservados 2024 - 2025.</p>
-    Design by <a href="https://aarinformatica.github.io/">Alexsandro Alves Rodrigues</a>
+    Design by <a href="#">Alexsandro Alves Rodrigues</a>
   </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script> <script src="script.js"></script>
-<script>
-// Função para abrir/fechar a sidebar
+          <script>
+              // Função para abrir/fechar a sidebar
 function toggleNav() {
     const sidebar = document.getElementById("mySidebar");
     const toggleBtn = sidebar.querySelector('.menu-toggle-btn');
@@ -1396,6 +1637,106 @@ textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='tex
 
 let textWrapper2 = document.getElementById('text2');
 textWrapper2.innerHTML = textWrapper2.textContent.replace(/\S/g, "<span class='text'>$&</span>");
-</script>
+
+/*enviar mimos*/
+const phrases = [
+    "Obrigado pelo seu apoio!",
+    "Sua contribuição faz a diferença!",
+    "Obrigado por ajudar a comunidade!",
+    "Sua generosidade é incrível!",
+    "Agradecemos seu suporte!",
+    "Por que o esqueleto não foi ao baile? Porque não tinha 'corpo' para ir com ele!",
+    "Por que o computador foi ao médico? Porque estava com um 'vírus'!",
+    "Qual é o animal mais antigo? A 'zebra', porque está em preto e branco!",
+    "Por que o livro de matemática está triste? Porque tem muitos problemas!",
+    "O que o zero disse para o oito? Adorei o seu cinto!",
+    "Qual é o cúmulo da paciência? Costurar um botão na camisa de força!",
+    "Por que o policial não usa sabão? Porque ele prefere deter gente!",
+    "Por que o lápis não se mexe? Porque ele é feito de madeira!",
+    "Por que o astrônomo não come estrelas? Porque ele prefere cometas!",
+    "Como o mar se saúda? Ele diz: 'Oi, onda vai?'",
+    "Por que a foto foi presa? Porque ela foi 'revelada'!",
+    "O que o pontinho verde disse para o pontinho vermelho? Sou mais maduro que você!",
+    "Por que o pintinho não toma banho? Porque ele já é limpinho!",
+    "Qual é o cúmulo da força? Dobrar a esquina!",
+    "O que o tomate foi fazer no banco? Tirar extrato!"
+];
+
+document.getElementById('envioMimosShowQrCodeBtn').addEventListener('click', function() {
+    const contentDiv = document.getElementById('envioMimosContentQrCode');
+    if (contentDiv) {
+        contentDiv.innerHTML = `<img id="envioMimosQrCodeImg" src="https://raw.githubusercontent.com/aarinformatica/imagensclipados.io/refs/heads/main/pixlucas.jpg" alt="QR Code">`;
+        toggleBackButton(true);
+        changeTitle(getRandomPhrase());
+    } else {
+        console.error('Elemento envioMimosContentQrCode não encontrado');
+    }
+});
+
+document.getElementById('envioMimosShowPixKeyBtn').addEventListener('click', function() {
+    const contentDiv = document.getElementById('envioMimosContentPix');
+    if (contentDiv) {
+        contentDiv.innerHTML = `<p class="envio-mimos-pix-key">Chave PIX: 01d6f03e-965f-4cd4-81f3-942e86d3c438</p>`;
+        toggleBackButton(true);
+        changeTitle(getRandomPhrase());
+    } else {
+        console.error('Elemento envioMimosContentPix não encontrado');
+    }
+});
+
+document.getElementById('envioMimosBackBtn').addEventListener('click', function() {
+    const contentQrCodeDiv = document.getElementById('envioMimosContentQrCode');
+    const contentPixDiv = document.getElementById('envioMimosContentPix');
+    if (contentQrCodeDiv) contentQrCodeDiv.innerHTML = '';
+    if (contentPixDiv) contentPixDiv.innerHTML = '';
+    toggleBackButton(false);
+    changeTitle("Escolha uma Opção");
+});
+
+function toggleBackButton(show) {
+    const backBtn = document.getElementById('envioMimosBackBtn');
+    const options = document.querySelector('.envio-mimos-options');
+    if (backBtn && options) {
+        if (show) {
+            backBtn.classList.remove('envio-mimos-hidden');
+            options.classList.add('envio-mimos-hidden');
+        } else {
+            backBtn.classList.add('envio-mimos-hidden');
+            options.classList.remove('envio-mimos-hidden');
+        }
+    } else {
+        console.error('Elemento envioMimosBackBtn ou envio-mimos-options não encontrado');
+    }
+}
+
+function changeTitle(newTitle) {
+    const mainTitle = document.getElementById('envioMimosMainTitle');
+    if (mainTitle) {
+        mainTitle.textContent = newTitle;
+    } else {
+        console.error('Elemento envioMimosMainTitle não encontrado');
+    }
+}
+
+function getRandomPhrase() {
+    return phrases[Math.floor(Math.random() * phrases.length)];
+}
+/*redes sociais*/
+const socialButtons = document.querySelectorAll('.social-button');
+
+const effects = ['effect-wobble', 'effect-bounce', 'effect-shake'];
+
+socialButtons.forEach(button => {
+    button.addEventListener('mouseover', () => {
+        const effect = effects[Math.floor(Math.random() * effects.length)];
+        button.classList.add(effect);
+    });
+
+    button.addEventListener('mouseout', () => {
+        effects.forEach(effect => button.classList.remove(effect));
+    });
+});
+
+          </script>
 </body>
 </html>
