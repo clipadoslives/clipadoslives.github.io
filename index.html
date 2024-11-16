@@ -1272,6 +1272,142 @@
         margin: 10px; /* Ajusta o espaço entre os botões */
     }
 }
+      /*quem é o clipados?*/
+      @property --x-clipados {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0.3;
+}
+
+@property --y-clipados {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0.1;
+}
+
+/* Estilos movidos do body para a classe .clipados-body */
+.clipados-body {
+    background: #efefef;
+    font: 16px system-ui;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    perspective: 1000px;
+}
+
+.clipados-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.clipados-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.clipados-card {
+    --degree-clipados: 19deg;
+    --x-range-clipados: 2 * (-0.5 + var(--x-clipados));
+    --y-range-clipados: 2 * (-0.5 + var(--y-clipados));
+    width: 80%;
+    max-width: 450px;
+    position: relative;
+    display: grid;
+    gap: 4px;
+    padding: 16px;
+    background: white;
+    border: 1px solid white;
+    border-radius: 16px;
+    box-shadow: calc(23px * var(--x-range-clipados)) calc(23px * var(--y-range-clipados)) 20px rgba(0, 0, 0, 0.18);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    animation: float-clipados 6s ease-in-out infinite;
+    overflow: hidden;
+}
+
+.clipados-card:hover {
+    animation-play-state: paused;
+}
+
+.clipados-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.clipados-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    cursor: none;
+    border-radius: inherit;
+    opacity: 0.5;
+    background-image: radial-gradient(circle at calc(100% * var(--x-clipados)) calc(100% * var(--y-clipados)), white, transparent);
+}
+
+.clipados-card-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    width: 90%;
+    box-sizing: border-box;
+}
+
+@keyframes float-clipados {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes move-clipados {
+    from {
+        --x-clipados: 0.2;
+        --y-clipados: 0.7;
+    }
+    to {
+        --x-clipados: 0.6;
+        --y-clipados: 0.1;
+    }
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .clipados-card {
+        padding: 12px;
+    }
+
+    .clipados-card-content {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .clipados-card {
+        padding: 8px;
+    }
+
+    .clipados-card-content {
+        font-size: 12px;
+    }
+}    
     </style>
 <!-- partial:index.partial.html -->
 <html lang="pt-BR">
@@ -1420,9 +1556,22 @@
     </div>
       <!--quem é o clipados?-->
         <div id="quem-e-o-clipados" class="content">
-            <h1>Quem é o Clipados?</h1>
-            <p>Conteúdo será disponibilizdo em breve. Arguarde!!!</p>
+            <h1>Quem é o Clipados?</h1>           
+    <div class="clipados-section">
+        <div class="clipados-container">
+            <div class="clipados-card">
+                <img src="https://raw.githubusercontent.com/aarinformatica/imagensclipados.io/refs/heads/main/quemeoclipados.jpg" alt="Quem é o Clipados">
+                <div class="clipados-card-content">
+                    <p>🔥 MEU NOME LUCAS ZANOTTI, ATUALMENTE TENHO 26 ANOS, SOU CONHECIDO NA INTERNET COMO CLIPADOS LIVE.</p>
+                    <p>🔥 SOU CRIADOR DE CONTEÚDO AUDIOVISUAL: A 3 ANOS</p>
+                    <p>🔥 ATUALMENTE TENHO 2 CANAIS DE CONTEÚDO DIÁRIOS NAS PLATAFORMAS:</p>
+                    <p>✨ YOUTUBE e TWITCH ✨</p>
+                    <p>✨OBJETIVO DE TRAZER ALEGRIA E MELHORAR O DIA DE TODOS COM BOM HUMOR, PIADAS E ZUERA.</p>
+                </div>
+            </div>
         </div>
+    </div>
+</div>
         <div id="parcerias" class="content">
             <h1>Parcerias</h1>
             <p>Veja nossas parcerias.</p>
@@ -1748,6 +1897,18 @@ socialButtons.forEach(button => {
     button.addEventListener('mouseout', () => {
         effects.forEach(effect => button.classList.remove(effect));
     });
+});
+  /*quem é o clipados*/
+let clipadosCard = document.querySelector(".clipados-card");
+
+clipadosCard.addEventListener("mousemove", (event) => {
+    let x = event.offsetX;
+    let y = event.offsetY;
+    let w = clipadosCard.clientWidth;
+    let h = clipadosCard.clientHeight;
+
+    clipadosCard.style.setProperty("--x-clipados", x / w);
+    clipadosCard.style.setProperty("--y-clipados", y / h);
 });
 </script>
 </body>
